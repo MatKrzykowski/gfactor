@@ -15,6 +15,12 @@ from lists import n_list_rotate, n_list_rotate_shift, n_list_elong100, n_list_el
 if Options().Polaron:
     psi_release()
 
+gtensor = [
+    # New g-tensor
+    Simulation(Options(minima_eps=1e-8, bound_limit=0.01), projectname="new_gtensor",
+               n_list=[i for i in range(1, 8)],
+               output_filename="new_gfactor/wkr_new.dat"),
+]
 
 # g-factor at anticrossing
 anti_gfactor = [
@@ -199,9 +205,9 @@ gfactor = [
                in_plane_E_list=[
                    (0.0, 0.0),
                    (3.5355339059327373, 3.5355339059327373)
-                   ],
-               output_filename="example/wkr_new.dat",
-               B_list=[(0.0, 0.0, 1.0)]),
+    ],
+        output_filename="example/wkr_new.dat",
+        B_list=[(0.0, 0.0, 1.0)]),
     # B-field dependence in symmetrical case
     Simulation(Options(),
                projectname="shift110",
@@ -245,4 +251,4 @@ gfactor = [
                B_list=B_list),
 ]
 
-sims = (Zielinski + anti_gfactor + gfactor)
+sims = (gtensor + Zielinski + anti_gfactor + gfactor)
