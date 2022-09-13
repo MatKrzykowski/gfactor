@@ -96,7 +96,7 @@ def write_info_minimum(struct, filename):
                        sci_str.format(struct.minimum.S_z[0]) +
                        sci_str.format(struct.minimum.S_z[1]) +
                        sci_str.format(struct.minimum.S_z[2]) +
-                       sci_str.format(struct.minimum.S_z[3]) + 
+                       sci_str.format(struct.minimum.S_z[3]) +
                        str(struct.gfactors_sign_diff)
                        )
             new_line(file)
@@ -181,14 +181,14 @@ def write_gtensor(sim, filename):
         for struct in sim.structures:
             if struct.gfactors[0] is not None:
                 file.write(int_str.format(struct.n_str) +
-                        sci_str.format(struct.B_x) +
-                        sci_str.format(struct.B_y) +
-                        sci_str.format(struct.B_z) +
-                        sci_str.format(struct.phi) +
-                        sci_str.format(struct.theta) +
-                        sci_str.format(struct.gfactors[0]) +
-                        sci_str.format(struct.gfactors[1])
-                        )
+                           sci_str.format(struct.B_x) +
+                           sci_str.format(struct.B_y) +
+                           sci_str.format(struct.B_z) +
+                           sci_str.format(struct.phi) +
+                           sci_str.format(struct.theta) +
+                           sci_str.format(struct.gfactors[0]) +
+                           sci_str.format(struct.gfactors[1])
+                           )
                 if struct.coeffs is not None:
                     file.write(sci_str.format(struct.coeffs[0, 0]) +
                                sci_str.format(struct.coeffs[0, 1]) +

@@ -209,16 +209,16 @@ class Calculation():
 
     # Add additional information if available
     def add_coeffs(self,
-                       line  # String containing additional information
-                       ):
+                   line  # String containing additional information
+                   ):
         # Split the line for further analysis
         line = line.split()
         coeffs = np.array([[str_to_complex(line[6+i*4+j])
                             for j in range(4)] for i in range(8)])
-        coeffs_up = coeffs[2,:]
-        coeffs_down = coeffs[5,:]
+        coeffs_up = coeffs[2, :]
+        coeffs_down = coeffs[5, :]
         self.struct.coeffs = np.array([[coeffs_up[0], coeffs_down[0]],
-                                        [coeffs_up[2], coeffs_down[2]]])
+                                       [coeffs_up[2], coeffs_down[2]]])
 
     @property
     def in_range(self):

@@ -1,3 +1,5 @@
+from os import popen
+
 # Options class, containing various options for the calculations
 class Options():
     def __init__(self,
@@ -16,7 +18,7 @@ class Options():
         self.write_fit_data = write_fit_data
 
         # Continue calculations with increased threshold
-        self.continue_calculations = False
+        self.continue_calculations = True
 
         # kp calculation epsilon
         self.eps = eps
@@ -53,7 +55,7 @@ class Options():
 
         # True if calculations conducted on Polaron
         # False is meant for data analysis and printing output files
-        self.Polaron = False
+        self.Polaron = self.is_Polaron()
 
         # Load between same structures in different projects
         self.read_special_cases = False
@@ -92,3 +94,6 @@ class Options():
     @property
     def minima_vicinity(self):
         return self.minima_eps * 1e2
+
+    def is_Polaron(self):
+        return "polaron" in popen("echo $HOSTNAME").read()

@@ -25,8 +25,7 @@ for sim in sims:
         # lol
         sim.write_fitting_points()
 
-# for sim in gtensor.sims:
-#     # Data for g-tensor calculations
-#     if sim.options.write_gtensor:
-#         sim.write_gtensor()
-    
+for sim in gtensor.sims:
+    # Data for g-tensor calculations
+    if sim.options.write_gtensor:
+        sim.write_gtensor()

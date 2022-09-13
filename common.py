@@ -147,10 +147,12 @@ def gen_Blist(input, dir):
     else:
         assert False, "Bad dir in gen_Blist"
 
+
 def gen_Blist_multiple(input, dirs):
     input = sort_and_remove_dupl(input)
     B_lists = [gen_Blist(input, dir) for dir in dirs]
     return sum([list(x) for x in zip(*B_lists)], [])
+
 
 def sort_and_remove_dupl(X):
     X = sorted(list(set(X)))

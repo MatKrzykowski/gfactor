@@ -14,7 +14,6 @@ class Psi():
                  eps_factor=1.0,
                  E_diff=1.0,
                  message="",
-                 # max_seconds=60.0,
                  max_seconds=180.2,
                  sleep_interval=0.1,
                  kp_log="kp_log",

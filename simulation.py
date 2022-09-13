@@ -369,7 +369,7 @@ class Simulation():
             clear_output_file(self.piezo_filename.format(B))
         for struct in self.structures:
             if struct.additional is not None:
-                write_info_piezo(struct, self.piezo_filename)    
+                write_info_piezo(struct, self.piezo_filename)
 
     def write_fitting_points(self):
         write_fitting_points(self, self.B_fit_filename)

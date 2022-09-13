@@ -196,7 +196,10 @@ Zielinski = [
 gfactor = [
     # Example
     Simulation(Options(minima_eps=1e-6), projectname="E_field",
-               in_plane_E_list=[(0.0, 0.0), (3.5355339059327373, 3.5355339059327373)],
+               in_plane_E_list=[
+                   (0.0, 0.0),
+                   (3.5355339059327373, 3.5355339059327373)
+                   ],
                output_filename="example/wkr_new.dat",
                B_list=[(0.0, 0.0, 1.0)]),
     # B-field dependence in symmetrical case
