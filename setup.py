@@ -18,7 +18,7 @@ if Options().Polaron:
 gtensor = [
     # New g-tensor
     Simulation(Options(minima_eps=1e-8, bound_limit=0.01), projectname="new_gtensor",
-               n_list=[i for i in range(1, 8)],
+               n_list=[i for i in range(1, 4)],
                output_filename="new_gfactor/wkr_new.dat"),
 ]
 
