@@ -384,15 +384,15 @@ class Structure():
         if self.additional is not None:
             return None
 
-        bounds_factor_left = self.bounds_right[0]
-        bounds_factor_right = self.bounds_right[1]
-        bounds = self.right
-        if bounds[1] >= self.options.right_limit / bounds_factor_right:
-            return None
-        if bounds[0] >= self.options.right_limit / bounds_factor_left:
-            return None
-
         if self.sim.options.gtensor_E is None:
+            bounds_factor_left = self.bounds_right[0]
+            bounds_factor_right = self.bounds_right[1]
+            bounds = self.right
+            if bounds[1] >= self.options.right_limit / bounds_factor_right:
+                return None
+            if bounds[0] >= self.options.right_limit / bounds_factor_left:
+                return None
+
             outer_range = self.E_range(True)
             inner_range = self.E_range(False)
             i = 1 if self.options.gfactor_to_right else 0

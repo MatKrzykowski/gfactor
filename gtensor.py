@@ -17,9 +17,39 @@ if Options().Polaron:
 
 
 sims = [
-    # New g-tensor
-    Simulation(Options(), projectname="new_gtensor",
-               n_list=[i for i in range(1, 7)],
+    # C2v
+    Simulation(Options(gtensor_E=-4.3280376706999997), projectname="new_gtensor",
+               n_list=[1],
+               output_filename="new_gfactor/wkr_new.dat",
+               in_plane_E_list=[(0.0, 0.0)],
+               B_list=B_list_gtensor),
+    # Cs[110] small
+    Simulation(Options(gtensor_E=-4.2584691500999998), projectname="new_gtensor",
+               n_list=[2],
+               output_filename="new_gfactor/wkr_new.dat",
+               in_plane_E_list=[(0.0, 0.0)],
+               B_list=B_list_gtensor),
+    # Cs[110] large
+    Simulation(Options(gtensor_E=2.9755692701999998), projectname="new_gtensor",
+               n_list=[3],
+               output_filename="new_gfactor/wkr_new.dat",
+               in_plane_E_list=[(0.0, 0.0)],
+               B_list=B_list_gtensor),
+    # C1
+    Simulation(Options(gtensor_E=-4.0026005500000004), projectname="new_gtensor",
+               n_list=[4],
+               output_filename="new_gfactor/wkr_new.dat",
+               in_plane_E_list=[(0.0, 0.0)],
+               B_list=B_list_gtensor),
+    # C2 small
+    Simulation(Options(gtensor_E=-4.5184076203999997), projectname="new_gtensor",
+               n_list=[5],
+               output_filename="new_gfactor/wkr_new.dat",
+               in_plane_E_list=[(0.0, 0.0)],
+               B_list=B_list_gtensor),
+    # C2 large
+    Simulation(Options(gtensor_E=-3.6550266988000000), projectname="new_gtensor",
+               n_list=[6],
                output_filename="new_gfactor/wkr_new.dat",
                in_plane_E_list=[(0.0, 0.0)],
                B_list=B_list_gtensor),

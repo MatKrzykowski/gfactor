@@ -128,7 +128,9 @@ B_list_gtensor = [(cos(phi) * sin(theta),
                   for theta in sorted(set(linspace(0, pi, 17)[1:-1]) | {pi/32, pi*31/32})
                   for phi in linspace(0, pi, 17)[:-1]
                   ] + [(0., 0., 1.), (0., 0., -1.)]
-B_list_gtensor = array(B_list_gtensor)
+B_list_gtensor = array(B_list_gtensor +
+                       [(i/10, j/10, k/10) for i, j, k in B_list_gtensor] +
+                       [(i*10, j*10, k*10) for i, j, k in B_list_gtensor])
 
 n_list_rotate = [  # degrees
     27, 1, 2, 3, 4, 5, 6,  # -5-25
