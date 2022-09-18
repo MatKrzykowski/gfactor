@@ -19,7 +19,7 @@ if Options().Polaron:
 sims = [
     # New g-tensor
     Simulation(Options(), projectname="new_gtensor",
-               n_list=[i for i in range(1, 8)],
+               n_list=[i for i in range(1, 7)],
                output_filename="new_gfactor/wkr_new.dat",
                in_plane_E_list=[(0.0, 0.0)],
                B_list=B_list_gtensor),
